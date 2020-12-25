@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 class Validator {
 	constructor({ selector, pattern = {}, method }) {
 		this.form = document.querySelector(selector);
@@ -30,7 +31,6 @@ class Validator {
 			pattern(elem, pattern) {
 				return pattern.test(elem.value);
 			}
-
 		}; // end validatorMethod
 
 		const method = this.method[elem.id];

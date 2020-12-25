@@ -415,53 +415,53 @@
 <script src="script/plugins/validator/validator.js"></script>
 
 <script>
-    const validFormMain = new Validator({
+    const validMain = new Validator({
         selector: '#form1',
         pattern: { 
-			name : /^аА-яЯёЁ $/,
+			name : /[аА-яЯёЁ]\s?/,
 			phone : /^\+380\d{9}$/
         },
         method: {
-			'user_name': [
+			'form1-name': [
                 ['notEmpty'],
                 ['pattern', 'name']
             ],
 
-            'user_phone': [
+            'form1-phone': [
                 ['notEmpty'],
                 ['pattern', 'phone']
             ],
 
-            'user_email': [
+            'form1-email': [
                 ['notEmpty'],
                 ['pattern', 'email']
             ]
         }
 	}),	
-	validFormBottom = new Validator({
+	validConnect = new Validator({
         selector: '#form2',
         pattern: { 
-			name : /^аА-яЯёЁ $/,
-			message : /^аА-яЯёЁ $/,
+			name : /[аА-яЯёЁ]\s?/,
+			message : /[аА-яЯёЁ]\s?/,
 			phone : /^\+380\d{9}$/
         },
         method: {
-			'user_name': [
+			'form2-name': [
                 ['notEmpty'],
                 ['pattern', 'name']
             ],
 
-            'user_phone': [
+            'form2-phone': [
                 ['notEmpty'],
                 ['pattern', 'phone']
             ],
 
-            'user_email': [
+            'form2-email': [
                 ['notEmpty'],
                 ['pattern', 'email']
 			],
 			
-			'user_message': [
+			'form2-message': [
                 ['notEmpty'],
                 ['pattern', 'message']
             ]
@@ -470,29 +470,29 @@
 	validPopup = new Validator({
         selector: '#form3',
         pattern: { 
-			name : /^аА-яЯёЁ $/,
+			name : /[аА-яЯёЁ]\s?/,
 			phone : /^\+380\d{9}$/
         },
         method: {
-			'user_name': [
+			'form3-name': [
                 ['notEmpty'],
                 ['pattern', 'name']
             ],
 
-            'user_phone': [
+            'form3-phone': [
                 ['notEmpty'],
                 ['pattern', 'phone']
             ],
 
-            'user_email': [
+            'form3-email': [
                 ['notEmpty'],
                 ['pattern', 'email']
             ]
         }
 	});
 
-    validFormMain.init();
-	validFormBottom.init();
+    validMain.init();
+	validConnect.init();
 	validPopup.init();	
 
 </script>

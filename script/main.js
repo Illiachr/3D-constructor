@@ -306,7 +306,6 @@ window.addEventListener('DOMContentLoaded', () => {
 		let targetSrc;
 
 		commandContent.addEventListener('mouseover', e => {
-			console.log(e.target);
 			if (e.target.matches('.command__photo')) {
 				targetSrc = e.target.src;
 				e.target.src = e.target.dataset.img;
@@ -314,7 +313,6 @@ window.addEventListener('DOMContentLoaded', () => {
 		});
 
 		commandContent.addEventListener('mouseout', e => {
-			console.log(e.target);
 			if (e.target.matches('.command__photo')) {
 				e.target.src = targetSrc;
 			}
