@@ -411,4 +411,90 @@
 </div>
 
 </body>
+
+<script src="script/plugins/validator/validator.js"></script>
+
+<script>
+    const validFormMain = new Validator({
+        selector: '#form1',
+        pattern: { 
+			name : /^аА-яЯёЁ $/,
+			phone : /^\+380\d{9}$/
+        },
+        method: {
+			'user_name': [
+                ['notEmpty'],
+                ['pattern', 'name']
+            ],
+
+            'user_phone': [
+                ['notEmpty'],
+                ['pattern', 'phone']
+            ],
+
+            'user_email': [
+                ['notEmpty'],
+                ['pattern', 'email']
+            ]
+        }
+	}),	
+	validFormBottom = new Validator({
+        selector: '#form2',
+        pattern: { 
+			name : /^аА-яЯёЁ $/,
+			message : /^аА-яЯёЁ $/,
+			phone : /^\+380\d{9}$/
+        },
+        method: {
+			'user_name': [
+                ['notEmpty'],
+                ['pattern', 'name']
+            ],
+
+            'user_phone': [
+                ['notEmpty'],
+                ['pattern', 'phone']
+            ],
+
+            'user_email': [
+                ['notEmpty'],
+                ['pattern', 'email']
+			],
+			
+			'user_message': [
+                ['notEmpty'],
+                ['pattern', 'message']
+            ]
+        }
+	}),
+	validPopup = new Validator({
+        selector: '#form3',
+        pattern: { 
+			name : /^аА-яЯёЁ $/,
+			phone : /^\+380\d{9}$/
+        },
+        method: {
+			'user_name': [
+                ['notEmpty'],
+                ['pattern', 'name']
+            ],
+
+            'user_phone': [
+                ['notEmpty'],
+                ['pattern', 'phone']
+            ],
+
+            'user_email': [
+                ['notEmpty'],
+                ['pattern', 'email']
+            ]
+        }
+	});
+
+    validFormMain.init();
+	validFormBottom.init();
+	validPopup.init();	
+
+</script>
+
 </html>
